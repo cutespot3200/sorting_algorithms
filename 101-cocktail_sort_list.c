@@ -2,7 +2,7 @@
 
 void change_node_ahead(listint_t **list, listint_t **tail, listint_t **shaker);
 void change_node_back(listint_t **list, listint_t **tail, listint_t **shaker);
-void current_sort_list(listint_t **list);
+void cocktail_sort_list(listint_t **list);
 
 /**
  * change_node_ahead - Change a node in a listint_t doubly-linked list
@@ -57,11 +57,11 @@ void change_node_back(listint_t **list, listint_t **tail, listint_t **shaker)
 }
 
 /**
- * current_sort_list - Sort a listint_t doubly-linked list of ints in
+ * cocktail_sort_list - Sort a listint_t doubly-linked list of ints in
  *                      ascending order using the cocktail shaker algorithm.
  * @list: Pointer to head of listint_t doubly-linked list.
  */
-void current_sort_list(listint_t **list)
+void cocktail_sort_list(listint_t **list)
 {
 	listint_t *tail, *shaker;
 	bool shaken_not_stirred = false;
