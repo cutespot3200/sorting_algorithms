@@ -45,8 +45,8 @@ void radix_count_sort(int *array, size_t size, int sig, int *buff)
 
 	for (x = size - 1; (int)x >= 0; x--)
 	{
-		buff[count[(array[x] / sig) % 10] - 1] = array[i];
-		count[(array[i] / sig) % 10] -= 1;
+		buff[count[(array[x] / sig) % 10] - 1] = array[x];
+		count[(array[x] / sig) % 10] -= 1;
 	}
 
 	for (x = 0; x < size; x++)
@@ -73,10 +73,10 @@ void radix_sort(int *array, size_t size)
 	if (buff == NULL)
 		return;
 
-	max = get_max(array, size);
+	max = find_max(array, size);
 	for (sig = 1; max / sig > 0; sig *= 10)
 	{
-		radix_counting_sort(array, size, sig, buff);
+		radix_count_sort(array, size, sig, buff);
 		print_array(array, size);
 	}
 
