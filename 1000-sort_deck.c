@@ -1,9 +1,9 @@
 #include "deck.h"
 
 int _strcmp(const char *s1, const char *s2);
-char get_value(deck_node_t *card);
-void insertion_sort_deck_kind(deck_node_t **deck);
-void insertion_sort_deck_value(deck_node_t **deck);
+char check_value(deck_node_t *card);
+void insert_sort_deck(deck_node_t **deck);
+void insertion_sort_deck_val(deck_node_t **deck);
 void sort_deck(deck_node_t **deck);
 
 /**
@@ -109,7 +109,7 @@ void insertion_sort_deck_val(deck_node_t **deck)
 		insert = iter->prev;
 		while (insert != NULL &&
 		       insert->card->kind == iter->card->kind &&
-		       get_value(insert) > get_value(iter))
+		       check_value(insert) > check_value(iter))
 		{
 			insert->next = iter->next;
 			if (iter->next != NULL)
@@ -136,6 +136,6 @@ void sort_deck(deck_node_t **deck)
 	if (deck == NULL || *deck == NULL || (*deck)->next == NULL)
 		return;
 
-	insertion_sort_deck(deck);
+	insert_sort_deck(deck);
 	insertion_sort_deck_val(deck);
 }
