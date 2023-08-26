@@ -29,7 +29,7 @@ void merge_sarray(int *subarr, int *buff, size_t front, size_t mid,
 	for (; l < mid; l++)
 		buff[n++] = subarr[l];
 	for (; m < back; m++)
-		buff[k++] = subarr[j];
+		buff[n++] = subarr[m];
 	for (l = front, n = 0; l < back; l++)
 		subarr[l] = buff[n++];
 
@@ -53,7 +53,7 @@ void merge_sort_recursive(int *subarr, int *buff, size_t front, size_t back)
 		mid = front + (back - front) / 2;
 		merge_sort_recursive(subarr, buff, front, mid);
 		merge_sort_recursive(subarr, buff, mid, back);
-		merge_subarr(subarr, buff, front, mid, back);
+		merge_sarray(subarr, buff, front, mid, back);
 	}
 }
 
