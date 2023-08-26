@@ -15,14 +15,14 @@ void change_ints(int *c, int *d)
 }
 
 /**
- * shello_sort - Sort  array of ints in ascending
+ * shell_sort - Sort  array of ints in ascending
  *              order using the shell sort algorithm.
  * @array: Array of ints.
  * @size: Size of the array.
  *
  * Description: Uses the Knuth interval sequence.
  */
-void shello_sort(int *array, size_t size)
+void shell_sort(int *array, size_t size)
 {
 	size_t gap, a, b;
 
