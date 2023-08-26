@@ -40,7 +40,7 @@ int most_partition(int *array, size_t size, int left, int right)
 		{
 			if (above < below)
 			{
-				swap_ints(array + below, array + above);
+				change_ints(array + below, array + above);
 				print_array(array, size);
 			}
 			above++;
